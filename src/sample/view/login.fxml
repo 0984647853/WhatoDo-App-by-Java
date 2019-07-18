@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller.LoginController">
+    <children>
+        <AnchorPane layoutY="94.0" prefHeight="306.0" prefWidth="700.0" style="-fx-background-color: #263238;">
+            <children>
+                <JFXTextField fx:id="Login_username" layoutX="203.0" layoutY="79.0" prefHeight="26.0" prefWidth="293.0"
+                              promptText="Username" style="-fx-text-fill: #fffd8c;" unFocusColor="#cd8410">
+                    <focusColor>
+                        <RadialGradient centerX="0.8799999660915798" centerY="0.3854961832061069" radius="0.5">
+                            <stops>
+                                <Stop color="#edd607"/>
+                                <Stop color="#edd607" offset="0.2946564885496183"/>
+                                <Stop color="WHITE" offset="0.9389312977099237"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </RadialGradient>
+                    </focusColor>
+                </JFXTextField>
+                <JFXPasswordField fx:id="Login_password" layoutX="202.0" layoutY="140.0" prefHeight="26.0"
+                                  prefWidth="294.0" promptText="Password" style="-fx-text-fill: #fffd8c;"
+                                  unFocusColor="#cd8410">
+                    <focusColor>
+                        <RadialGradient centerX="0.8799999660915798" centerY="0.3854961832061069" radius="0.5">
+                            <stops>
+                                <Stop color="#edd607"/>
+                                <Stop color="#edd607" offset="0.2946564885496183"/>
+                                <Stop color="WHITE" offset="0.9389312977099237"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </RadialGradient>
+                    </focusColor>
+                </JFXPasswordField>
+                <JFXButton fx:id="Login_Button" buttonType="RAISED" layoutX="200.0" layoutY="210.0" prefHeight="26.0"
+                           prefWidth="294.0" text="Login" textFill="WHITE"/>
+            </children>
+        </AnchorPane>
+        <Label alignment="CENTER" layoutX="199.0" layoutY="-9.0" prefHeight="104.0" prefWidth="210.0" text="Whato..."
+               textFill="WHITE">
+            <font>
+                <Font size="58.0"/>
+            </font>
+        </Label>
+        <Label layoutX="409.0" prefHeight="94.0" prefWidth="73.0" style="-fx-background-color: #ffa000;" text="do"
+               textAlignment="RIGHT">
+            <font>
+                <Font size="58.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="Login_sign_up_button" layoutX="626.0" layoutY="14.0" style="-fx-background-color: #ffa000;"
+                   text="Sign up">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+    </children>
+</AnchorPane>

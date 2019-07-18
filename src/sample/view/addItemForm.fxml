@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="314.0" prefWidth="700.0"
+            style="-fx-background-color: #263238;" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="sample.Controller.AddItemFormController">
+    <children>
+        <JFXTextField fx:id="task_field_id" alignment="CENTER" layoutX="183.0" layoutY="40.0" prefHeight="34.0"
+                      prefWidth="334.0" promptText="Task" style="-fx-text-fill: #ffffff;" unFocusColor="#cd8410">
+            <focusColor>
+                <RadialGradient centerX="0.5177777608235677" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="#ffe46c"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </focusColor>
+        </JFXTextField>
+        <JFXTextArea fx:id="description_id" layoutX="147.0" layoutY="101.0" prefHeight="140.0" prefWidth="406.0"
+                     promptText="Description" style="-fx-text-fill: #ffffff;" unFocusColor="#cd8410">
+            <focusColor>
+                <RadialGradient centerX="0.5888888888888889" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="#dfed17"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </focusColor>
+        </JFXTextArea>
+        <JFXButton fx:id="saveTaskbutton" layoutX="317.0" layoutY="270.0" style="-fx-background-color: #ffa000;"
+                   text="Save task"/>
+    </children>
+</AnchorPane>
