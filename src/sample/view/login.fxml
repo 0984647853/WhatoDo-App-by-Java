@@ -7,9 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;"
-            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller.LoginController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="login_anchor_main" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0"
+            style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="sample.Controller.LoginController">
     <children>
         <AnchorPane layoutY="94.0" prefHeight="306.0" prefWidth="700.0" style="-fx-background-color: #263238;">
             <children>

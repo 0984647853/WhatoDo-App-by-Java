@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.Database.DatabaseHandler;
 import sample.animations.Shaker;
@@ -27,6 +28,9 @@ public class LoginController {
 
     @FXML
     private URL location;
+
+    @FXML
+    private AnchorPane login_anchor_main;
 
     @FXML
     private JFXTextField Login_username;
@@ -90,10 +94,18 @@ public class LoginController {
         });
         Login_sign_up_button.setOnAction(event -> {
             // Take users to signup screen
+            //way 1:
+//            try {
+//                AnchorPane loader = FXMLLoader.load(getClass().getResource("/sample/view/signup.fxml"));
+//                login_anchor_main.getChildren().setAll(loader);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+            //way 2:
             Login_sign_up_button.getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/view/signup.fxml"));
-
+            loader.setLocation(getClass().getResource(
+                    "/sample/view/signup.fxml"));
             try {
                 loader.load();
             } catch (IOException e) {

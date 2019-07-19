@@ -4,18 +4,18 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.layout.AnchorPane;
 import sample.Database.DatabaseHandler;
+import sample.methods.BackMethod;
 import sample.model.User;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SignUpController {
+
+    @FXML
+    private AnchorPane sign_up_anchor_main;
 
     @FXML
     private ResourceBundle resources;
@@ -43,21 +43,36 @@ public class SignUpController {
 
     @FXML
     void initialize() {
-        DatabaseHandler databaseHandler = new DatabaseHandler();
         signup_button.setOnAction(event -> createUser());
         signup_back_button.setOnAction(event -> {
-            signup_back_button.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/view/login.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            //way 1:
+//            try {
+//                //sign_up_anchor_main.getScene().getWindow().hide();
+//                AnchorPane loader = FXMLLoader.load(getClass().getResource("/sample/view/login.fxml"));
+//                sign_up_anchor_main.getChildren().setAll(loader);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+
+            //way 2:
+
+//            signup_back_button.getScene().getWindow().hide();
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(getClass().getResource(
+//                    "/sample/view/login.fxml"));
+//            try {
+//                loader.load();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            Parent root = loader.getRoot();
+//            Stage stage = new Stage();
+//            stage.setScene(new Scene(root));
+//            stage.showAndWait();
+            //way 3 ( Back Method):
+            BackMethod backMethod = new BackMethod();
+            backMethod.setDir("\"/sample/view/login.fxml\"");
+            backMethod.back();
         });
     }
 
