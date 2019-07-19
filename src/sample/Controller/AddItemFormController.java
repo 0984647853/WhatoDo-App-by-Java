@@ -4,12 +4,11 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import sample.Database.DatabaseHandler;
+import sample.methods.SwitchScene;
 import sample.model.Task;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.ResourceBundle;
@@ -61,13 +60,10 @@ public class AddItemFormController {
             task_field_id.setText("");
             description_id.setText("");
             // back to additem
-            try {
-                AnchorPane formPane =
-                        FXMLLoader.load(getClass().getResource("/sample/view/addItem.fxml"));
-                anchorPane_form.getChildren().setAll(formPane);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            saveTaskbutton.getScene().getWindow().hide();
+            SwitchScene switchScene = new SwitchScene();
+            switchScene.setDir("/sample/view/addItem.fxml");
+            switchScene.change();
         });
     }
 
