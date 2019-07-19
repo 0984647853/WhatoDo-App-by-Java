@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.Database.DatabaseHandler;
 import sample.animations.Shaker;
+import sample.methods.SwitchScene;
 import sample.model.User;
 
 import java.io.IOException;
@@ -103,18 +104,9 @@ public class LoginController {
 //            }
             //way 2:
             Login_sign_up_button.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource(
-                    "/sample/view/signup.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            SwitchScene switchScene = new SwitchScene();
+            switchScene.setDir("/sample/view/signup.fxml");
+            switchScene.change();
         });
     }
 

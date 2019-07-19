@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class BackMethod {
-    String dir;
+public class SwitchScene {
+    public String dir;
 
     public String getDir() {
         return dir;
@@ -18,9 +18,10 @@ public class BackMethod {
         this.dir = dir;
     }
 
-    public void back() {
+    public void change() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(dir));
+        loader.setLocation(getClass().
+                getResource(getDir()));
         try {
             loader.load();
         } catch (IOException e) {
@@ -29,6 +30,6 @@ public class BackMethod {
         Parent root = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.showAndWait();
+        stage.show();
     }
 }
