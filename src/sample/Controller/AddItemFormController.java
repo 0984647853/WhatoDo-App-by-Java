@@ -21,6 +21,9 @@ public class AddItemFormController {
     private AnchorPane anchorPane_form;
 
     @FXML
+    private JFXButton AIF_back_button;
+
+    @FXML
     private ResourceBundle resources;
 
     @FXML
@@ -37,6 +40,15 @@ public class AddItemFormController {
     @FXML
     void initialize() {
         databaseHandler = new DatabaseHandler();
+        //Task announce
+        TaskAnnounce();
+
+        AIF_back_button.setOnAction(event -> {
+            AIF_back_button.getScene().getWindow().hide();
+            SwitchScene switchScene = new SwitchScene();
+            switchScene.setDir("/sample/view/addItem.fxml");
+            switchScene.change();
+        });
         saveTaskbutton.setOnAction(event -> {
 
             Calendar calendar = Calendar.getInstance();
@@ -54,17 +66,21 @@ public class AddItemFormController {
 
                 System.out.println("Task added successfully");
                 System.out.println("Task user ID: " + task.getUserId());
+                // back to additem
+                saveTaskbutton.getScene().getWindow().hide();
+                SwitchScene switchScene = new SwitchScene();
+                switchScene.setDir("/sample/view/addItem.fxml");
+                switchScene.change();
             } else {
                 System.out.println("Nothing added!");
             }
             task_field_id.setText("");
             description_id.setText("");
-            // back to additem
-            saveTaskbutton.getScene().getWindow().hide();
-            SwitchScene switchScene = new SwitchScene();
-            switchScene.setDir("/sample/view/addItem.fxml");
-            switchScene.change();
         });
+    }
+
+    private void TaskAnnounce() {
+
     }
 
     private int getUserId() {

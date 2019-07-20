@@ -109,7 +109,6 @@ public class LoginController {
             switchScene.change();
         });
     }
-
     private void showAddItem() {
         // Take users to signup screen
         Login_Button.getScene().getWindow().hide();
