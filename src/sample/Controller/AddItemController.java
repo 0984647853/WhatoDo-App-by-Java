@@ -10,9 +10,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import sample.Database.DatabaseHandler;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddItemController {
@@ -35,7 +37,8 @@ public class AddItemController {
     private AnchorPane rootAnchorPane;
 
     @FXML
-    void initialize() {
+    void initialize() throws SQLException, ClassNotFoundException {
+        TaskAnnounce();
         DropShadow shadow = new DropShadow(10, Color.WHITE);
         addButton.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent ->
                 addButton.setEffect(shadow));
@@ -85,12 +88,22 @@ public class AddItemController {
         });
     }
 
-    public int getUserID() {
+    private int getUserID() {
         return userID;
     }
 
     void setUserID(int userID) {
         AddItemController.userID = userID;
         System.out.println("AddItemController: " + AddItemController.userID);
+    }
+
+    private void TaskAnnounce() throws SQLException, ClassNotFoundException {
+        DatabaseHandler isTask = new DatabaseHandler();
+        int taskcount = isTask.getAllTasks(getUserID());
+        if (taskcount == 0) {
+            notTaskLable.setText("There is no task");
+        } else {
+            notTaskLable.setText("You have " + taskcount + " tasks");
+        }
     }
 }

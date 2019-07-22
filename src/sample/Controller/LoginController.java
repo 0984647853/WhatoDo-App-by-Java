@@ -112,9 +112,10 @@ public class LoginController {
     private void showAddItem() {
         // Take users to signup screen
         Login_Button.getScene().getWindow().hide();
+        AddItemController addItemController = new AddItemController();
+        addItemController.setUserID(userID);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/sample/view/addItem.fxml"));
-
         try {
             loader.load();
         } catch (IOException e) {
@@ -123,10 +124,6 @@ public class LoginController {
         Parent root = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
-
-        AddItemController addItemController = new AddItemController();
-        addItemController.setUserID(userID);
-
         stage.showAndWait();
     }
 }

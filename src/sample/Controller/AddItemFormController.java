@@ -40,9 +40,6 @@ public class AddItemFormController {
     @FXML
     void initialize() {
         databaseHandler = new DatabaseHandler();
-        //Task announce
-        TaskAnnounce();
-
         AIF_back_button.setOnAction(event -> {
             AIF_back_button.getScene().getWindow().hide();
             SwitchScene switchScene = new SwitchScene();
@@ -79,9 +76,6 @@ public class AddItemFormController {
         });
     }
 
-    private void TaskAnnounce() {
-
-    }
 
     private int getUserId() {
         return userId;
