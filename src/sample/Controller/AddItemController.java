@@ -1,5 +1,6 @@
 package sample.Controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import sample.Database.DatabaseHandler;
+import sample.methods.SwitchScene;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,36 +39,24 @@ public class AddItemController {
     private AnchorPane rootAnchorPane;
 
     @FXML
+    private JFXButton watchtask;
+
+
+    @FXML
     void initialize() throws SQLException, ClassNotFoundException {
         TaskAnnounce();
         DropShadow shadow = new DropShadow(10, Color.WHITE);
+        watchtask.setOnAction(event -> {
+            watchtask.getScene().getWindow().hide();
+            SwitchScene switchScene = new SwitchScene();
+            switchScene.setDir("/sample/view/list.fxml");
+            switchScene.change();
+        });
         addButton.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent ->
                 addButton.setEffect(shadow));
         addButton.addEventHandler(MouseEvent.MOUSE_EXITED, mouseEvent ->
                 addButton.setEffect(null));
         addButton.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-
-//            FadeTransition fadeTransition = new FadeTransition(Duration.millis(1000),addButton);
-//            FadeTransition fadeTransition1 = new FadeTransition(Duration.millis(1000), notTaskLable);
-//
-//            System.out.println("Add button clicked");
-//            addButton.relocate(333, 80);
-//            notTaskLable.relocate(268,60);
-//
-//            addButton.setOpacity(0);
-//            notTaskLable.setOpacity(0);
-//
-//            fadeTransition.setFromValue(1f);
-//            fadeTransition.setToValue(0f);
-//            fadeTransition.setCycleCount(1);
-//            fadeTransition.setAutoReverse(false);
-//            fadeTransition.play();
-//
-//            fadeTransition1.setFromValue(1f);
-//            fadeTransition1.setToValue(0f);
-//            fadeTransition1.setCycleCount(1);
-//            fadeTransition1.setAutoReverse(false);
-//            fadeTransition1.play();
 
             try {
                 AnchorPane formPane =
