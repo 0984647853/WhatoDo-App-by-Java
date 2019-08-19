@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="sample.Controller.ListController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                    prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;">
+            <children>
+                <Label alignment="CENTER" layoutX="198.0" layoutY="-1.0" prefHeight="62.0" prefWidth="211.0"
+                       text="Whato..." textFill="WHITE">
+                    <font>
+                        <Font size="58.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="408.0" prefHeight="70.0" prefWidth="74.0" style="-fx-background-color: #ffa000;"
+                       text="do" textAlignment="RIGHT">
+                    <font>
+                        <Font size="58.0"/>
+                    </font>
+                </Label>
+                <JFXListView fx:id="listtask" layoutY="86.0" prefHeight="314.0" prefWidth="700.0"/>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
