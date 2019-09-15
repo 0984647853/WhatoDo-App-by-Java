@@ -78,7 +78,7 @@ public class AddItemController {
         });
     }
 
-    private int getUserID() {
+    public int getUserID() {
         return userID;
     }
 

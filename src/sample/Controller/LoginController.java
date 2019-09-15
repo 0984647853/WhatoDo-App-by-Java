@@ -70,7 +70,6 @@ public class LoginController {
                         String name = userRow.getString("firstname");
 
                         userID = userRow.getInt("userid");
-
                         System.out.println("Welcome " + name);
                     } else {
                         Shaker shaker = new Shaker(Login_username, 10);

@@ -35,6 +35,21 @@ public class DatabaseHandler extends Config {
         }
     }
 
+    public ResultSet getTasksByUser(int userId) {
+        ResultSet resultTask = null;
+        String query = "SELECT * FROM " + Const.TASKS_TABLE + " WHERE " + Const.USERS_ID + "=?";
+        try {
+            PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
+            preparedStatement.setInt(1, userId);
+            resultTask = preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return resultTask;
+    }
+
     public ResultSet getUser(User user) {
         ResultSet resultSet = null;
 
