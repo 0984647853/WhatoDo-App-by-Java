@@ -15,7 +15,7 @@
         <AnchorPane layoutY="94.0" prefHeight="306.0" prefWidth="700.0" style="-fx-background-color: #263238;">
             <children>
                 <JFXTextField fx:id="Login_username" layoutX="203.0" layoutY="79.0" prefHeight="26.0" prefWidth="293.0"
-                              promptText="Username" style="-fx-text-fill: #fffd8c;" unFocusColor="#cd8410">
+                              promptText="Username" style="-fx-text-fill: #fffd8c;" unFocusColor="#21cf8c">
                     <focusColor>
                         <RadialGradient centerX="0.8799999660915798" centerY="0.3854961832061069" radius="0.5">
                             <stops>
@@ -29,7 +29,7 @@
                 </JFXTextField>
                 <JFXPasswordField fx:id="Login_password" layoutX="202.0" layoutY="140.0" prefHeight="26.0"
                                   prefWidth="294.0" promptText="Password" style="-fx-text-fill: #fffd8c;"
-                                  unFocusColor="#cd8410">
+                                  unFocusColor="#21cf8c">
                     <focusColor>
                         <RadialGradient centerX="0.8799999660915798" centerY="0.3854961832061069" radius="0.5">
                             <stops>
@@ -51,13 +51,13 @@
                 <Font size="58.0"/>
             </font>
         </Label>
-        <Label layoutX="409.0" prefHeight="94.0" prefWidth="73.0" style="-fx-background-color: #ffa000;" text="do"
-               textAlignment="RIGHT">
+        <Label layoutX="409.0" prefHeight="94.0" prefWidth="73.0" style="-fx-background-color: #21cf8c;" text="do"
+               textAlignment="RIGHT" textFill="WHITE">
             <font>
                 <Font size="58.0"/>
             </font>
         </Label>
-        <JFXButton fx:id="Login_sign_up_button" layoutX="626.0" layoutY="14.0" style="-fx-background-color: #ffa000;"
+        <JFXButton fx:id="Login_sign_up_button" layoutX="626.0" layoutY="14.0" style="-fx-background-color: #21cf8c;"
                    text="Sign up">
             <font>
                 <Font name="System Bold" size="12.0"/>

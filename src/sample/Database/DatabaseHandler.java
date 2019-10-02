@@ -17,6 +17,17 @@ public class DatabaseHandler extends Config {
         return dbConnection;
     }
 
+    //Delete Task
+    public void deleteTask(int userId, int taskId) throws SQLException, ClassNotFoundException {
+        String query = "DELETE FROM " + Const.TASKS_TABLE + " WHERE " +
+                Const.USERS_ID + "=?" + " AND " + Const.TASK_ID + "=?";
+
+        PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
+        preparedStatement.setInt(1, userId);
+        preparedStatement.setInt(2, taskId);
+        preparedStatement.execute();
+        preparedStatement.close();
+    }
     //Write
     public void signUpUser(User user) {
         String insert = "INSERT INTO " + Const.USERS_TALBLE + "(" + Const.USERS_FIRSTNAME
@@ -42,9 +53,7 @@ public class DatabaseHandler extends Config {
             PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
             preparedStatement.setInt(1, userId);
             resultTask = preparedStatement.executeQuery();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return resultTask;

@@ -2,7 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
@@ -10,7 +12,7 @@
             fx:controller="sample.Controller.ListController">
     <children>
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                    prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;">
+                    prefHeight="414.0" prefWidth="712.0" style="-fx-background-color: #000000;">
             <children>
                 <Label alignment="CENTER" layoutX="198.0" layoutY="-1.0" prefHeight="62.0" prefWidth="211.0"
                        text="Whato..." textFill="WHITE">
@@ -18,16 +20,32 @@
                         <Font size="58.0"/>
                     </font>
                 </Label>
-                <Label layoutX="408.0" prefHeight="70.0" prefWidth="74.0" style="-fx-background-color: #ffa000;"
-                       text="do" textAlignment="RIGHT">
+                <Label layoutX="408.0" prefHeight="70.0" prefWidth="74.0" style="-fx-background-color: #21cf8c;"
+                       text="do" textAlignment="RIGHT" textFill="WHITE">
                     <font>
                         <Font size="58.0"/>
                     </font>
                 </Label>
-                <JFXListView fx:id="listtask" layoutY="86.0" prefHeight="314.0" prefWidth="700.0"
-                             style="-fx-background-color: #263238;"/>
+                <JFXListView fx:id="listtask" layoutX="314.0" layoutY="93.0" prefHeight="293.0" prefWidth="390.0"
+                             style="-fx-background-color: #263238;">
+                    <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" color="WHITE" height="16.23" radius="12.3825" width="35.3"/>
+                    </effect>
+                </JFXListView>
                 <JFXButton fx:id="back_button_list" layoutX="14.0" layoutY="14.0" prefHeight="22.0" prefWidth="66.0"
-                           style="-fx-background-color: #ffa000;" text="Back"/>
+                           style="-fx-background-color: #21cf8c;" text="Back"/>
+                <AnchorPane layoutX="13.0" layoutY="93.0" prefHeight="218.0" prefWidth="285.0"
+                            style="-fx-background-color: #263238;">
+                    <effect>
+                        <DropShadow color="WHITE"/>
+                    </effect>
+                    <children>
+                        <JFXTextField fx:id="description_id" layoutX="10.0" layoutY="6.0" prefHeight="208.0"
+                                      prefWidth="267.0" promptText="Testing" style="-fx-text-fill: #ffffff;"/>
+                    </children>
+                </AnchorPane>
+                <JFXButton fx:id="test_button" layoutX="117.0" layoutY="348.0" style="-fx-background-color: #ffa000;"
+                           text="Button Test"/>
             </children>
         </AnchorPane>
     </children>

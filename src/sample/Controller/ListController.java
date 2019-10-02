@@ -2,6 +2,7 @@ package sample.Controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -25,18 +26,27 @@ public class ListController {
     private DatabaseHandler databaseHandler;
 
     @FXML
+    private JFXTextField description_id;
+
+    @FXML
+    private JFXButton test_button;
+
+    @FXML
     void initialize() throws SQLException {
         tasks = FXCollections.observableArrayList();
         databaseHandler = new DatabaseHandler();
         ResultSet resultSet = databaseHandler.getTasksByUser(new AddItemController().getUserID());
         while (resultSet.next()) {
             Task task = new Task();
+            task.setTaskId(resultSet.getInt("taskid"));
             task.setTask(resultSet.getString("task"));
             task.setDatecreated(resultSet.getTimestamp("datecreated"));
             task.setDescription(resultSet.getString("description"));
             tasks.addAll(task);
         }
-
+        test_button.setOnAction(event -> {
+            description_id.setText("test ok");
+        });
         System.out.println("User .... Id: " + new AddItemController().getUserID());
 
         listtask.setItems(tasks);
@@ -47,6 +57,5 @@ public class ListController {
             switchScene.setDir("/sample/view/addItem.fxml");
             switchScene.change();
         });
-
     }
 }

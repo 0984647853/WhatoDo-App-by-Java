@@ -15,19 +15,11 @@ import sample.Database.DatabaseHandler;
 import sample.methods.SwitchScene;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 public class AddItemController {
 
-    private static int userID;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
+    public static int userID;
 
     @FXML
     private ImageView addButton;

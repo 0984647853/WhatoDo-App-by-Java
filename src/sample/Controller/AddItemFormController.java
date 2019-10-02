@@ -64,10 +64,10 @@ public class AddItemFormController {
                 System.out.println("Task added successfully");
                 System.out.println("Task user ID: " + task.getUserId());
                 // back to additem
-                saveTaskbutton.getScene().getWindow().hide();
-                SwitchScene switchScene = new SwitchScene();
-                switchScene.setDir("/sample/view/addItem.fxml");
-                switchScene.change();
+//                saveTaskbutton.getScene().getWindow().hide();
+//                SwitchScene switchScene = new SwitchScene();
+//                switchScene.setDir("/sample/view/addItem.fxml");
+//                switchScene.change();
             } else {
                 System.out.println("Nothing added!");
             }

@@ -16,7 +16,7 @@
                     style="-fx-background-color: #263238;">
             <children>
                 <Label fx:id="notTaskLable" alignment="CENTER" layoutX="267.0" layoutY="51.0" prefHeight="40.0"
-                       prefWidth="163.0" text="No task for today" textFill="#ffa000">
+                       prefWidth="163.0" text="No task for today" textFill="#21cf8c">
                     <font>
                         <Font size="18.0"/>
                     </font>
@@ -28,7 +28,7 @@
                     </image>
                 </ImageView>
                 <JFXButton fx:id="watchtask" layoutX="203.0" layoutY="157.0" prefHeight="40.0" prefWidth="294.0"
-                           text="Watch tasks" textFill="#ffa000">
+                           text="Watch tasks" textFill="#21cf8c">
                     <ripplerFill>
                         <LinearGradient endX="1.0" startX="0.41603052707118837" startY="0.5000000145599133">
                             <stops>
@@ -50,8 +50,8 @@
                 <Font size="58.0"/>
             </font>
         </Label>
-        <Label layoutX="408.0" prefHeight="70.0" prefWidth="74.0" style="-fx-background-color: #ffa000;" text="do"
-               textAlignment="RIGHT">
+        <Label layoutX="408.0" prefHeight="70.0" prefWidth="74.0" style="-fx-background-color: #21cf8c;" text="do"
+               textAlignment="RIGHT" textFill="WHITE">
             <font>
                 <Font size="58.0"/>
             </font>
