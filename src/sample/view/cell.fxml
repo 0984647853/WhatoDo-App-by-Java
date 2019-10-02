@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root_id" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="374.0"
+            style="-fx-background-color: #263238;" xmlns="http://javafx.com/javafx/11.0.1">
+    <children>
+        <ImageView fx:id="extend_button" accessibleRole="BUTTON" fitHeight="47.0" fitWidth="46.0" layoutX="5.0"
+                   layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assest/baseline_unfold_more_white_48dp.png"/>
+            </image>
+        </ImageView>
+        <Label fx:id="task_id" alignment="CENTER" contentDisplay="TOP" layoutX="51.0" layoutY="36.0" prefHeight="29.0"
+               prefWidth="188.0" text=" Task" textAlignment="CENTER" textFill="WHITE"/>
+        <Label fx:id="date_id" alignment="CENTER" layoutX="79.0" layoutY="79.0" prefHeight="18.0" prefWidth="138.0"
+               text="Date-created" textFill="WHITE"/>
+        <ImageView fx:id="deleteButton" fitHeight="30.0" fitWidth="31.0" layoutX="293.0" layoutY="36.0"
+                   pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assest/baseline_delete_white_48dp.png"/>
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
